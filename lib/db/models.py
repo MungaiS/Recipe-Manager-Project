@@ -39,16 +39,16 @@ class Procedure(Base):
     recipe_id = Column(Integer, ForeignKey('recipes.id'))
     recipe = relationship('Recipe', back_populates='procedures')
 
-if __name__ == '__main__':
-  engine = create_engine('sqlite:///recipe.db')
-  Base.metadata.create_all(engine)
+# if __name__ == '__main__':
+#   engine = create_engine('sqlite:///recipe.db')
+#   Base.metadata.create_all(engine)
 
-  sessioncreator = sessionmaker(bind=engine)
-  mysession = sessioncreator()
+#   sessioncreator = sessionmaker(bind=engine)
+#   mysession = sessioncreator()
 
-  recipe1 = Recipe(name="Pilau", description = "cxbrnje", instructions="cjsojadjs")
-  mysession.add(recipe1)
-  mysession.commit()
+#   recipe1 = Recipe(name="Pilau", description = "cxbrnje", instructions="cjsojadjs")
+#   mysession.add(recipe1)
+#   mysession.commit()
 
 
 # class Ingredient(Base):
